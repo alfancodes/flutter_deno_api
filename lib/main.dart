@@ -34,7 +34,6 @@ class _MyAppState extends State<MyApp> {
         body: GestureDetector(
           onTap: () async => {
             await Quote.connectToAPI().then((value) {
-              print('Tapped');
               quote = value;
               setState(() {});
             })

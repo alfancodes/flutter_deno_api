@@ -23,8 +23,6 @@ class Quote {
     var jsonObject = json.decode(res.body);
     var quoteData = (jsonObject as Map<String, dynamic>)['quote'];
 
-    print(quoteData);
-
     return Quote.createQuote(quoteData);
   }
 }
