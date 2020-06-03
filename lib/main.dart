@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
                   Padding(
                     padding: const EdgeInsets.only(top: 21.0),
                     child: Text(
-                      '"' + quote.author + '"',
+                      (quote != null) ? quote.author : '',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w900,
