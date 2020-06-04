@@ -15,6 +15,15 @@ class _MyAppState extends State<MyApp> {
   Quote quote;
 
   @override
+  void initState() {
+    super.initState();
+    Quote.connectToAPI().then((value) {
+      quote = value;
+      setState(() {});
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
