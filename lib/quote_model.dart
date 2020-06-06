@@ -19,10 +19,18 @@ class Quote {
 
   static Future<Quote> connectToAPI() async {
     String uri = 'http://192.168.100.5:3000/api/quote';
-    var res = await http.get(uri);
-    var jsonObject = json.decode(res.body);
-    var quoteData = (jsonObject as Map<String, dynamic>)['quote'];
 
-    return Quote.createQuote(quoteData);
+    try {
+      var res = await http.get(uri);
+      var jsonObject = json.decode(res.body);
+      var quoteData = (jsonObject as Map<String, dynamic>)['quote'];
+
+      return Quote.createQuote(quoteData);
+    } catch(_){
+      print("throwing new error");
+
+      return null;
+    }
+
   }
 }

@@ -19,7 +19,6 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     Quote.connectToAPI().then((value) {
       quote = value;
-      setState(() {});
     });
   }
 
@@ -55,11 +54,11 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    (quote != null) ? quote.quote : 'No data',
+                    (quote != null) ? quote.quote : 'Please check your internet connection.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
-                      fontSize: 28,
+                      fontSize: 38,
                     ),
                   ),
                   Padding(
